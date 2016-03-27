@@ -1,0 +1,15 @@
+<h1>Searching for: <%= @search_term %></h1>
+<table border-collapse=collapse>
+	<tr>
+		<th>thumbnail</th>
+		<th>title</th>
+		<th>social rank</th>
+	</tr>
+	<% @recipes.each do |recipe| %>
+	<tr>
+		<td> <a href= <%= recipe["image_url"] %> > <%= image_tag(recipe["image_url"], size: "100") %> </a> </td>
+		<td> <a href= <%= recipe["title"] %> > <%= sanitize recipe["title"] %> </a> </td>
+		<td> <%= recipe["social_rank"] %> </td>
+	</tr>
+	<% end %>
+</table>
